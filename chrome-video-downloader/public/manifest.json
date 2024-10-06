@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Video Downloader",
+  "version": "1.0",
+  "description": "Download Instagram and YouTube videos and photos.",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "permissions": [
+    "activeTab", "downloads"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.instagram.com/*", "*://*.youtube.com/*"],
+      "js": ["contentScript.js"]
+    }
+  ]
+}
